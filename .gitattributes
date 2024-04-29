@@ -1,0 +1,5 @@
+# Do not change ENDL handling:
+#* text=false
+
+# Do not change ENDL 
+* -text
