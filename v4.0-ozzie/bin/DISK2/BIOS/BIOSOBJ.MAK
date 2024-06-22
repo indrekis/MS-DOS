@@ -7,14 +7,15 @@ ibmmtcon.obj:	ibmmtcon.asm ansi.inc defdbug.inc
 ibmdsk.obj:	ibmdsk.asm defdbug.inc
 	masm ibmdsk;
 
-sysini.obj:	sysini.asm dossym.inc devsym.inc syscalls.inc
-	masm sysini;
+#sysini.obj:	sysini.asm dossym.inc devsym.inc syscalls.inc
+#	masm sysini;
 
-sysimes.obj:	sysimes.asm
-	masm sysimes;
+#sysimes.obj:	sysimes.asm
+#	masm sysimes;
 
 ibmbio.exe:	ibmbio.obj ibmmtcon.obj ibmdsk.obj sysini.obj sysimes.obj
 	link ibmbio ibmmtcon ibmdsk sysini sysimes,ibmbio,ibmbio/map;
 
+# Use 70 as an base segment (hex)
 ibmbio.com:	ibmbio.exe
 	exe2bin ibmbio ibmbio.com

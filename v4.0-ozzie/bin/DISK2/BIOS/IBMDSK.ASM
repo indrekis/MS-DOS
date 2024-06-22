@@ -1221,7 +1221,7 @@ HDErrTyp3	DB	3,  4, 4, 4
 
 FixedInterrupt	PROC	FAR
 	debug	8,8,<FxIntr\n>,<>
-	cmp	word [SemDiskIO],0001h
+	cmp	word PTR [SemDiskIO],0001h
 	jnz	fxinot13
 	cmp	SemInt13,0		; If a direct Int13 request is being
 	jz	fxinot13		;  made call the ROM floppy interrupt
